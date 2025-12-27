@@ -1,6 +1,3 @@
-# Small-Enterprise-Network-Design
-Designed and implemented a Cisco-based branch network with VLANs, DHCP, wireless access, and inter-VLAN routing to support multiple departments securely and efficiently.
-
 # Designing a VLAN-Based Branch Network for XYZ Company Using Cisco Devices
 
 ## Project Overview
@@ -42,27 +39,42 @@ This project demonstrates the end-to-end design and implementation of the branch
 
 ## Implementation Steps & Commands
 
-### 1. Configure VLANs on the Switch
+<details>
+<summary>1. Configure VLANs on the Switch</summary>
+
 ```bash
 enable
 configure terminal
+
+! Create VLANs
 vlan 10
 name Admin_IT
 vlan 20
 name Finance_HR
 vlan 30
 name Customer_Service
-exit
 
-interface range GigabitEthernet0/1-10
+! Assign ports to VLANs
+! VLAN 10: ports 1-4 (PC, Laptop, AP, Printer)
+interface range fa0/1-4
 switchport mode access
 switchport access vlan 10
 
-interface range GigabitEthernet0/11-20
+! VLAN 20: ports 5-8
+interface range fa0/5-8
 switchport mode access
 switchport access vlan 20
 
-interface range GigabitEthernet0/21-24
+! VLAN 30: ports 9-12
+interface range fa0/9-12
 switchport mode access
 switchport access vlan 30
+
+! Set up trunk port to router (assume fa0/24)
+interface fa0/24
+switchport mode trunk
+switchport trunk encapsulation dot1q
 exit
+
+! Save configuration
+write memory
