@@ -1,6 +1,3 @@
-Got it! I cleaned up the bottom part of your README so that **Outcome, Tools & Devices, and Future Enhancements** are clearly separated sections, properly formatted in Markdown. I also added proper headings and spacing. Here’s the corrected version:
-
-````markdown
 # Designing a VLAN-Based Branch Network for XYZ Company Using Cisco Devices
 
 ## Project Overview
