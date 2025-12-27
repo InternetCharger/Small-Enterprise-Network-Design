@@ -138,18 +138,6 @@ ip dhcp excluded-address 192.168.1.129 192.168.1.131
 
 ![Small Enterprise Topology](https://github.com/user-attachments/assets/80c82203-6ae9-4cf7-8c76-b52b69668e5d)
 
-Example structure:
-
-```
-            [ISP]
-              |
-           [Router]
-       -----------------
-       |       |       |
-     VLAN10  VLAN20  VLAN30
-       |       |       |
-     Switch ---- APs ---- Wireless Clients
-```
 
 ---
 
