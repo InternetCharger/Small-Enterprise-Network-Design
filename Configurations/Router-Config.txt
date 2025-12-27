@@ -1,1 +1,28 @@
+---
 
+## Implementation Steps & Commands
+
+### 1. Configure VLANs on the Switch
+```bash
+enable
+configure terminal
+vlan 10
+name Admin_IT
+vlan 20
+name Finance_HR
+vlan 30
+name Customer_Service
+exit
+
+interface range GigabitEthernet0/1-10
+switchport mode access
+switchport access vlan 10
+
+interface range GigabitEthernet0/11-20
+switchport mode access
+switchport access vlan 20
+
+interface range GigabitEthernet0/21-24
+switchport mode access
+switchport access vlan 30
+exit
