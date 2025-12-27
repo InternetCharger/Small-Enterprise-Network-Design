@@ -1,3 +1,6 @@
+Got it! I cleaned up the bottom part of your README so that **Outcome, Tools & Devices, and Future Enhancements** are clearly separated sections, properly formatted in Markdown. I also added proper headings and spacing. Here’s the corrected version:
+
+````markdown
 # Designing a VLAN-Based Branch Network for XYZ Company Using Cisco Devices
 
 ## Project Overview
@@ -78,9 +81,14 @@ exit
 
 ! Save configuration
 write memory
+````
 
+</details>
 
-</details> <details> <summary>2. Configure Router for Inter-VLAN Routing</summary>
+<details>
+<summary>2. Configure Router for Inter-VLAN Routing</summary>
+
+```bash
 enable
 configure terminal
 
@@ -99,9 +107,14 @@ interface g0/0.30
 encapsulation dot1Q 30
 ip address 192.168.1.129 255.255.255.192
 no shutdown
+```
 
+</details>
 
-</details> <details> <summary>3. Configure DHCP Pools on Router</summary>
+<details>
+<summary>3. Configure DHCP Pools on Router</summary>
+
+```bash
 ip dhcp pool Admin_IT
 network 192.168.1.0 255.255.255.192
 default-router 192.168.1.1
@@ -118,34 +131,46 @@ default-router 192.168.1.129
 ip dhcp excluded-address 192.168.1.1 192.168.1.3
 ip dhcp excluded-address 192.168.1.65 192.168.1.67
 ip dhcp excluded-address 192.168.1.129 192.168.1.131
+```
 
+</details>
 
-<img width="1248" height="906" alt="Small Enterprise Topology" src="https://github.com/user-attachments/assets/80c82203-6ae9-4cf7-8c76-b52b69668e5d" />
+---
 
+## Network Diagram
 
+![Small Enterprise Topology](https://github.com/user-attachments/assets/80c82203-6ae9-4cf7-8c76-b52b69668e5d)
 
+Example structure:
 
+```
+            [ISP]
+              |
+           [Router]
+       -----------------
+       |       |       |
+     VLAN10  VLAN20  VLAN30
+       |       |       |
+     Switch ---- APs ---- Wireless Clients
+```
 
+---
 
-Outcome
+## Outcome
 
-Each department has a separate VLAN.
+* Each department has a **separate VLAN**.
+* All hosts **receive IP addresses automatically** via DHCP.
+* Departments can **communicate with each other** through router inter-VLAN routing.
+* Wireless connectivity is provided for all departments.
+* The branch network is **independent** but ready for future integration with the HQ network.
 
-All hosts receive IP addresses automatically via DHCP.
+---
 
-Departments can communicate with each other through router inter-VLAN routing.
+## Tools & Devices Used
 
-Wireless connectivity is provided for all departments.
+* Cisco Router (e.g., Cisco ISR 4000 series)
+* Cisco Switch (e.g., Cisco Catalyst 2960 series)
+* Cisco Wireless Access Points
+* Cisco Packet Tracer (for simulation)
 
-The branch network is independent but ready for future integration with the HQ network.
-
-
-Tools & Devices Used
-
-Cisco Router (e.g., Cisco ISR 4000 series)
-
-Cisco Switch (e.g., Cisco Catalyst 2960 series)
-
-Cisco Wireless Access Points
-
-Cisco Packet Tracer (for simulation)
+---
