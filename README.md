@@ -46,7 +46,8 @@ This project demonstrates the end-to-end design and implementation of the branch
 enable
 configure terminal
 
-! Create VLANs
+ - Create VLANs
+
 vlan 10
 name Admin_IT
 vlan 20
@@ -54,29 +55,30 @@ name Finance_HR
 vlan 30
 name Customer_Service
 
-! Assign ports to VLANs
-! VLAN 10: ports 1-4 (PC, Laptop, AP, Printer)
+- Assign ports to VLANs
+- VLAN 10: ports 1-4 (PC, Laptop, AP, Printer)
+
 interface range fa0/1-4
 switchport mode access
 switchport access vlan 10
 
-! VLAN 20: ports 5-8
+- VLAN 20: ports 5-8
 interface range fa0/5-8
 switchport mode access
 switchport access vlan 20
 
-! VLAN 30: ports 9-12
+- VLAN 30: ports 9-12
 interface range fa0/9-12
 switchport mode access
 switchport access vlan 30
 
-! Set up trunk port to router (assume fa0/24)
+- Set up trunk port to router 
 interface fa0/24
 switchport mode trunk
 switchport trunk encapsulation dot1q
 exit
 
-! Save configuration
+- Save configuration
 write memory
 ````
 
@@ -89,7 +91,7 @@ write memory
 enable
 configure terminal
 
-! Configure subinterfaces for each VLAN
+- Configure subinterfaces for each VLAN
 interface g0/0.10
 encapsulation dot1Q 10
 ip address 192.168.1.1 255.255.255.192
@@ -124,7 +126,7 @@ ip dhcp pool Customer_Service
 network 192.168.1.128 255.255.255.192
 default-router 192.168.1.129
 
-! Exclude router IPs from DHCP
+- Exclude router IPs from DHCP
 ip dhcp excluded-address 192.168.1.1 192.168.1.3
 ip dhcp excluded-address 192.168.1.65 192.168.1.67
 ip dhcp excluded-address 192.168.1.129 192.168.1.131
