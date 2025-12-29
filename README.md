@@ -1,9 +1,9 @@
 # Designing a VLAN-Based Branch Network for XYZ Company Using Cisco Devices
 
 ## Project Overview
-XYZ Company, a fast-growing food retail business based in Eastern Australia, plans to expand by opening a branch near the local village of Bonalbo. As a network engineer, I was tasked with designing a small, independent branch network that meets the company’s operational requirements while ensuring departmental segmentation, wireless access, and inter-department communication.  
+XYZ Company, a fast-growing food retail business based in Houston TX, plans to expand by opening a branch near the Downtown Area. As a network engineer, I was tasked with designing a small, independent branch network that meets the company’s operational requirements while ensuring departmental segmentation, wireless access, and inter-department communication.  
 
-This project demonstrates the end-to-end design and implementation of the branch network using Cisco devices, VLANs, DHCP, and wireless connectivity.
+Demonstrating the end-to-end design and implementation of the branch network using Cisco devices, VLANs, DHCP, and wireless connectivity.
 
 ---
 
